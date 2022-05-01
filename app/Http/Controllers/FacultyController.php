@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Models\Post;
+
+
+
 
 
 
@@ -14,10 +17,10 @@ class FacultyController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function faculty1()
-    {
-        return view("faculty1");
-    }
+    // public function faculty1()
+    // {
+    //     return view("faculty1");
+    // }
 
     public function homeView()
     {
@@ -36,6 +39,76 @@ class FacultyController extends Controller
 
         return view('footer');
     }
+
+    public function AdminPage()
+    {
+
+        return view('adminpage');
+    }
+
+
+    public function HomePage()
+    {
+
+        return view('homepage');
+    }
+
+    public function Faculty1()
+    {
+
+        return view('faculty1');
+    }
+
+    public function FacultyData()
+    {
+
+        return view('facultydata');
+    }
+
+        function AddClass(Request $request)
+    {
+
+          $post=new Post;
+          $post->name=$request->name;
+          $post->subject=$request->subject;
+          $post->course_code=$request->course_code;
+          $post->Class_period=$request->Class_period;
+          $post->semester=$request->semester;
+          $post->branch=$request->branch;
+          $post->save();
+    }
+    //     function add(Request $request){
+    //         $request->validate([
+
+
+    //         ]);
+
+    //     }
+    // public function AddClass(Request $request)
+    // {
+
+    //     $posts= new Post;
+    //     $posts->name=$request->name;
+    //     $posts->subject=$request->subject;
+    //     $posts->course_code=$request->course_code;
+    //     $posts->save();
+    //     return redirect('/homepage')->with('status', "inserted successfully");
+    // }
+    // -------------------------
+    // function AddClass(Request $request)
+
+    // {
+    //   $post=new Post;
+    //   $post->name=$request->name;
+    //   $post->subject=$request->subject;
+    //   $post->course_code=$request->course_code;
+    //   $post->Class_period=$request->Class_period;
+    //   $post->semester=$request->semester;
+    //   $post->branch=$request->branch;
+    //   $post->save();
+
+    //  }
+
 
 
 

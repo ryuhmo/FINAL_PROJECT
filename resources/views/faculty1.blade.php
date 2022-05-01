@@ -1,11 +1,13 @@
 
-<!DOCTYPE html>
+
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSC Page</title>
+    <title>Faculty Page</title>
 
 
 
@@ -74,10 +76,9 @@ table {
     text-decoration:none;
     background-color:purple;
     color:wheat;
-    display:inline-block;
-    padding:20px;
-    border:2px  solid wheat;
-    border-radius:10px;
+    display:flex;
+    padding:25px;
+    border-radius:20px;
     width:50%;
 
   }
@@ -98,19 +99,58 @@ table {
 </style>
 </head>
 <body>
+    <body>
 
-    <div class="borderview">
-    <table>
-    <th colspan="2"  style="margin-left:35px; background:rgba(62,30,30,1);padding:20px ;text-align:center; color:#eee">CSC Details</th></table>
+        <button type="button" class="btn btn-info" style="position:absolute; right:100px;margin:0"><a href="/homepage">
+            Add Class</a></button><br><br>
 
-       <center> <a href="/form" class="rc">Apply For Ration Card</a>
-        <a href="/Formstatus">Check Application Status</a></center>
-</div>
+    <form action="{{ url('/search') }}" method="get">
+      @csrf
+        <input type="search" class="sr" name="search" placeholder="Search Faculty Name.">
+        <button type="submit" id="search">Search</button>
+        </form>
+        <h1>Note:</h1>
+        <h4>Search your data with Your Name.</h4>
 
+
+
+
+        <table class="table table-hover table-bordered">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name of Faculty</th>
+          <th scope="col">Name of Department </th>
+          <th scope="col">Name of Department </th>
+          <th scope="col">Name of Department </th>
+
+        </tr>
+        <tbody>
+            <tr>
+              <th scope="row">1</th>
+
+              <td>Sandeep lukawlh</td>
+
+              <th scope="row">COMPUTER SCIENCE</th>
+            </tr>
+             <tr>
+              <th scope="row">1</th>
+
+              <td>Sandeep lukawlh</td>
+
+              <th scope="row">COMPUTER SCIENCE</th>
+             </tr>
+
+
+
+
+
+            </tr>
+          </tbody>
+
+    </table>
 
 
 
 </body>
 </html>
-
 
