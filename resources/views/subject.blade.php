@@ -139,6 +139,8 @@
             <td>{{$post['subject']}}</td>
             <td>{{$post['course_code']}}</td>
 
+
+
             <td>
                 {{  date('g:i A', strtotime($post['class_period_start'])) }}
                </td>
