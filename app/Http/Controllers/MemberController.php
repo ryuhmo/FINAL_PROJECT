@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 use App\Models\Member;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
     //
-    function AddClass(Request $request)
+    public function AddClass(Request $request)
     {
-      $member=new Member;
-      $member->input('name');
-      $member->input('subject');
-      $member->input('course_code');
-      $member->input('Class_period');
-      $member->input('semester');
-      $member->input('branch');
+        return view('addclass');
+        //   $member=new Member;
+    //   $member->input('name');
+    //   $member->input('subject');
+    //   $member->input('course_code');
+    //   $member->input('Class_period');
+    //   $member->input('semester');
+    //   $member->input('branch');
 
 
     //   $member->name=$request->name;
@@ -24,7 +26,18 @@ class MemberController extends Controller
     //   $member->Class_period=$request->Class_period;
     //   $member->semester=$request->semester;
     //   $member->branch=$request->branch;
-      $member->save();
+    //   $member->save();
+    }
+    public function store(Request $request)
+    {
+        $students=new Student();
+
+        $students->fname=$request->input('fname');
+        $students->save();
+        return redirect('/');
     }
 
+
+
 }
+

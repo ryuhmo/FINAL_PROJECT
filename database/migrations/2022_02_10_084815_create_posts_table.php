@@ -18,7 +18,8 @@ class CreatePostsTable extends Migration
             $table->string('name');
             $table->text('subject');
             $table->text('course_code');
-            $table->text('Class_period');
+            $table->text('class_period_start');
+            $table->text('class_period_end');
             $table->text('semester');
             $table->text('branch');
             $table->timestamps();

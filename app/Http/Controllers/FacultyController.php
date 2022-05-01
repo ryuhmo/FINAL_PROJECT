@@ -9,6 +9,7 @@ use App\Models\Post;
 
 
 
+
 class FacultyController extends Controller
 {
     /**
@@ -22,10 +23,10 @@ class FacultyController extends Controller
     //     return view("faculty1");
     // }
 
-    public function homeView()
+    public function loginView()
     {
 
-        return view('home');
+        return view('loginpage');
     }
 
     public function adminView()
@@ -47,10 +48,10 @@ class FacultyController extends Controller
     }
 
 
-    public function HomePage()
+    public function HomeView()
     {
 
-        return view('homepage');
+        return view('/homepage');
     }
 
     public function Faculty1()
@@ -64,6 +65,15 @@ class FacultyController extends Controller
 
         return view('facultydata');
     }
+    // public function Test()
+    // {
+
+    //     return view('test');
+    // }
+
+
+
+
 
         function AddClass(Request $request)
     {

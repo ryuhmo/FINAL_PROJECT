@@ -117,25 +117,44 @@
             <th scope="col">#</th>
             <th scope="col">Id</th>
             <th scope="col">Name</th>
-            <th scope="col">update</th>
-            <th scope="col">update</th>
+            <th scope="col">subject</th>
+            <th scope="col">course_code</th>
+            <th scope="col">Class period Start</th>
+            <th scope="col">Class period End</th>
+
+            <th scope="col">semester</th>
+            <th scope="col">branch</th>
+            <th scope="col">updated</th>
+            <th scope="col">created</th>
 
           </tr>
           </tr>
         </thead>
-        @foreach($nice as $student)
+        @foreach($data as $index=>$post)
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>{{$student['id']}}</td>
-            <td>{{$student['fname']}}</td>
-            <td>{{$student['created_at']}}</td>
-            <td>{{$student['updated_at']}}</td>
+            <td>{{$index+1}}</td>
+            <td>{{$post['name']}}</td>
+            <td>{{$post['subject']}}</td>
+            <td>{{$post['course_code']}}</td>
+
+            <td>
+                {{  date('g:i A', strtotime($post['class_period_start'])) }}
+               </td>
+            <td>{{$post['class_period_end']}}</td>
+
+            <td>{{$post['semester']}}</td>
+            <td>{{$post['branch']}}</td>
+            <td>
+
+                {{  date('d-M-Y', strtotime($post['created_at'])) }}
+                 </td>
+            <td>{{$post['updated_at']}}</td>
           </tr>
           <tr>
         </tbody>
         @endforeach
       </table>
-
 
       </body>

@@ -14,14 +14,15 @@ class CreateMembersTable extends Migration
     public function up()
     {
         Schema::create('members', function (Blueprint $table) {
-            $table->id();
             $table->string('name');
-            $table->string('subject');
-            $table->string('course_code');
-            $table->string('Class_period');
-            $table->string('semester');
-            $table->string('branch');
-            $table->timestamps();
+            // $table->id();
+            // $table->string('name');
+            // $table->string('subject');
+            // $table->string('course_code');
+            // $table->string('Class_period');
+            // $table->string('semester');
+            // $table->string('branch');
+            // $table->timestamps();
         });
     }
 

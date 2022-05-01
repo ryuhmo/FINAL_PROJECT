@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FacultyController;
-use App\Http\Controllers\MemberController;
-
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\PostController;
 
 
 
@@ -40,27 +40,24 @@ Route::get('/post/{id}/{name}', function ($id, $name) {
  require __DIR__.'/auth.php';
 
 
-//   Route::get("/faculty1", [FacultyController::class,'faculty1']);
 
-  Route::get("/", [FacultyController::class,'homeView']);
-
-  Route::get('/homepage',[FacultyController::class,'HomePage']);
-
+  Route::get("/faculty1", [FacultyController::class,'faculty1']);
+  Route::get('/index',[FacultyController::class,'index']);
   Route::get('/adminview',[FacultyController::class,'adminView']);
-
   Route::get('/footer',[FacultyController::class,'footerView']);
-
-  Route::get('/adminpage',[FacultyController::class,'AdminPage']);
-
-  Route::get('/facultydata',[FacultyController::class,'FacultyData']);
-
-  Route::get('faculty1',[FacultyController::class,'Faculty1']);
-
-  Route::view('add','addclass');
-  Route::post('add', [FacultyController::class,'AddClass']);
-
-  Route::view('add','addclass');
-  Route::post('add', [MemberController::class,'AddClass']);
+  Route::get('/facultydata',[FacultyController::class,'facultyData']);
+  Route::get("/loginpage",[FacultyController::class,'loginView']);
 
 
+   Route::view("/test","test");
+   Route::post("/test",[StudentController::class,'store']);
 
+   Route::post("/subject",[PostController::class,'store']);
+   Route::get("/subjects",[PostController::class,'show']);
+
+   //Route::resource('/images', ImageController::class);
+
+
+  Route::get('/', function () {
+    return view('homepage');
+    });
