@@ -43,9 +43,9 @@ Route::get('/post/{id}/{name}', function ($id, $name) {
 
   Route::get("/faculty1", [FacultyController::class,'faculty1']);
   Route::get('/index',[FacultyController::class,'index']);
-  Route::get('/adminview',[FacultyController::class,'adminView']);
+
   Route::get('/footer',[FacultyController::class,'footerView']);
-  Route::get('/facultydata',[FacultyController::class,'facultyData']);
+//   Route::get('/facultydata',[FacultyController::class,'facultyData']);
   Route::get("/loginpage",[FacultyController::class,'loginView']);
 
 
@@ -54,10 +54,28 @@ Route::get('/post/{id}/{name}', function ($id, $name) {
 
    Route::post("/subject",[PostController::class,'store']);
    Route::get("/subjects",[PostController::class,'show']);
+   Route::get("/faculty/adminview",[FacultyController::class,'adminView']);
+   Route::get("/faculty/hodview",[FacultyController::class,'hodView']);
+   Route::get('list',[PostController::class,'list']);
 
    //Route::resource('/images', ImageController::class);
+
+   Route::get('/submitsucess', function () {
+    return view('submitsucess');
+    });
+
+    // Route::get('/adminview', function () {
+    //     return view('adminview');
+    //     });
+
+    //     Route::get('faculty/hodview', function () {
+    //         return view('hodview');
+    //         });
 
 
   Route::get('/', function () {
     return view('homepage');
     });
+
+
+

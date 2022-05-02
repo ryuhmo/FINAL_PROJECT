@@ -101,12 +101,7 @@
       </head>
       <body>
 
-          <form action="{{ url('/search') }}" method="get">
-            @csrf
-              <input type="search" class="sr" name="search" placeholder="Search Faculty Name.">
-              <button type="submit" id="search">Search</button>
-              </form>
-              <h2>Note:</h2><h4>Search Faculty Name.</h4>
+
 
 
 
@@ -129,7 +124,7 @@
           </tr>
           </tr>
         </thead>
-        @foreach($data as $index=>$post)
+        @foreach($take as $index=>$post)
         <tbody>
           <tr>
 
@@ -157,6 +152,8 @@
                 {{  date('d-M-Y', strtotime($post['updated_at'])) }}
 
             </td>
+            <a href={{ "edit/".$post['id'] }} class="btn btn-primary btn-sm">Edit</a>
+            <a href={{ "edit/".$post['id'] }} class="btn btn-primary btn-sm">Delete</a>
           </tr>
           <tr>
         </tbody>

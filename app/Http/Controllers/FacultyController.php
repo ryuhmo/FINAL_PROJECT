@@ -29,11 +29,7 @@ class FacultyController extends Controller
         return view('loginpage');
     }
 
-    public function adminView()
-    {
 
-        return view('adminview');
-    }
 
     public function footerView()
     {
@@ -41,12 +37,28 @@ class FacultyController extends Controller
         return view('footer');
     }
 
-    public function AdminPage()
-    {
 
-        return view('adminpage');
-    }
+//<-------FETCH DATA FROM DB TABLE------->
+Public function adminView()
 
+{
+    $take=Post::all();
+    $safe = "999";
+ //    return view('subject',['nice'=>$data]);
+ return view('faculty/adminview',compact('take','safe'));
+}
+//<-------END FETCH DATA FROM DB TABLE------->
+
+    //<-------FETCH DATA FROM DB TABLE------->
+Public function hodView()
+
+{
+    $take=Post::all();
+    $safe = "999";
+ //    return view('subject',['nice'=>$data]);
+ return view('faculty/hodview',compact('take','safe'));
+}
+//<-------END FETCH DATA FROM DB TABLE------->
 
     public function HomeView()
     {

@@ -1,7 +1,3 @@
-
-<br><br><button type="button" class="btn btn-info" style="position:absolute; right:100px;margin:0"><a href="/test">
-    Add Class</a></button><br><br>
-
 <section id="services" class="services">
     <div class="container">
 
@@ -101,12 +97,7 @@
       </head>
       <body>
 
-          <form action="{{ url('/search') }}" method="get">
-            @csrf
-              <input type="search" class="sr" name="search" placeholder="Search Faculty Name.">
-              <button type="submit" id="search">Search</button>
-              </form>
-              <h2>Note:</h2><h4>Search Faculty Name.</h4>
+
 
 
 
@@ -129,7 +120,7 @@
           </tr>
           </tr>
         </thead>
-        @foreach($data as $index=>$post)
+        @foreach($take as $index=>$post)
         <tbody>
           <tr>
 

@@ -101,12 +101,7 @@
       </head>
       <body>
 
-          <form action="{{ url('/search') }}" method="get">
-            @csrf
-              <input type="search" class="sr" name="search" placeholder="Search Faculty Name.">
-              <button type="submit" id="search">Search</button>
-              </form>
-              <h2>Note:</h2><h4>Search Faculty Name.</h4>
+
 
 
 
@@ -120,7 +115,6 @@
             <th scope="col">course_code</th>
             <th scope="col">Class period Start</th>
             <th scope="col">Class period End</th>
-
             <th scope="col">semester</th>
             <th scope="col">branch</th>
             <th scope="col">updated</th>
@@ -157,10 +151,14 @@
                 {{  date('d-M-Y', strtotime($post['updated_at'])) }}
 
             </td>
+
           </tr>
           <tr>
         </tbody>
+        <a href={{ "delete/", $post['id'] }}>Delete</a>
+
         @endforeach
       </table>
 
       </body>
+

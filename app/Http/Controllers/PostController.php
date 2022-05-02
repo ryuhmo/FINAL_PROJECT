@@ -21,7 +21,7 @@ class PostController extends Controller
         $post->branch=$request->branch;
 
         $post->save();
-        return redirect('/');
+        return redirect('/subjects')->with('success', 'You have submitted successful!!');
         //<-------END INSERT DATA IN DB TABLE------->
     }
 
@@ -36,4 +36,16 @@ class PostController extends Controller
         return view('subject',compact('data','tata'));
        }
 //<-------END FETCH DATA FROM DB TABLE------->
+
+
+//<-------DELETE DATA FROM DB TABLE------->
+Public function list()
+
+{
+    $data=Post::all();
+    $tata = "999";
+ //    return view('subject',['nice'=>$data]);
+ return view('list',compact('data','tata'));
+}
+//<-------END Delete DATA FROM DB TABLE------->
 }
