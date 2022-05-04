@@ -57,8 +57,17 @@ Route::get('/post/{id}/{name}', function ($id, $name) {
    Route::get("/faculty/adminview",[FacultyController::class,'adminView']);
    Route::get("/faculty/hodview",[FacultyController::class,'hodView']);
    Route::get('list',[PostController::class,'list']);
+   Route::get('/admin/edit',[PostController::class,'edit']);
+   Route::get('/admin/delete',[PostController::class,'destroy']);
 
    //Route::resource('/images', ImageController::class);
+
+
+   route::get('/redirects',[PostController::class,"roleindex"]);
+   route::post('/addfaculty',[PostController::class,"addfaculty"]);
+
+   Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[
+       PostController::class,"addfaculty"])->name('dashboard');
 
    Route::get('/submitsucess', function () {
     return view('submitsucess');
