@@ -1,11 +1,22 @@
-@extends('layouts.layout')
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/form.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Faculty Class Record</title>
+
+</head>
+<body>
+
+
 <style>
     input type{
        border:7px solid black;
     }
     </style>
-        <h1 class="Class-record">CLASSES RECORDS</h1>
+        <h1 class="Class-record">FACULTY CLASS RECORDS</h1>
 
 
        <div class="form-border">
@@ -19,7 +30,8 @@
 
 
             <fieldset>
-                <legend>CLass</legend>
+                <legend><b></b></legend>
+                <div class="profile">
                 <label>Name :</label>
             <input type = "text" name="name" placeholder  = "Enter Your Name." ><br>
 
@@ -40,9 +52,25 @@
 
             <p><label>Branch:</label>
             <input type = "text" name="branch"  value= "Enter Branch Name" style=margin-left:33px></p>
-             <input type="submit" class="form-submit" name="submit">
+
+             <div class="submit">
+                 <input type="submit" class="form-submit" name="submit">
+             </div>
             <fieldset>
+            </div>
         </form>
         </div>
-@endsection
+        <div class="container d-md-flex py-4">
+
+            <div class="me-md-auto text-center text-md-start">
+              <div class="copyright">
+                &copy; Copyright <strong><span>Ryuhmo chozah</span></strong>. All Rights Reserved
+              </div>
+              <div class="credits">
+
+                Designed by <a href="https://bootstrapmade.com/">Ryuhmo chozah</a>
+              </div>
+            </div>
+    </body>
+    </html>
 

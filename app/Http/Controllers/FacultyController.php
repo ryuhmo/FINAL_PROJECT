@@ -38,7 +38,7 @@ class FacultyController extends Controller
     }
 
 
-//<-------FETCH DATA FROM DB TABLE------->
+//<-------FETCH DATA FROM DB TABLE for admin view ------->
 Public function adminView()
 
 {
@@ -47,7 +47,7 @@ Public function adminView()
  //    return view('subject',['nice'=>$data]);
  return view('faculty/adminview',compact('data','tata'));
 }
-//<-------END FETCH DATA FROM DB TABLE------->
+//<-------END FETCH DATA FROM DB TABLE for admin view------->
 
     //<-------FETCH DATA FROM DB TABLE------->
 Public function hodView()

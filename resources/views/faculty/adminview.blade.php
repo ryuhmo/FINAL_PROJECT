@@ -1,14 +1,19 @@
 
-<br><br><button type="button" class="btn btn-info" style="position:absolute; right:100px;margin:0"><a href="/test">
+<br><br><button class="button" style="position:absolute; right:100px;margin:0"><a href="/test">
     Add Class</a></button><br><br>
 
-<section id="services" class="services">
-    <div class="container">
+    <section id="services" class="services">
+        <div class="container">
 
-      <div class="section-title">
-        <h2>FACULTY RECORDS</h2>
+            <div class="outer">
+                <p class="inner"><center>Faculty Class Detail</center></p>
+              </div>
 
-      </div>
+
+
+
+          </div>
+          <br>
     </section>
 
     <style>
@@ -17,36 +22,36 @@
           color:black;
 
         }
-          .button
-          {
-          background-color:red;
-          border:none;
-          color:wheat;
-          text-decoration:none;
-          padding:16px 32px;
-          margin:25px;
-          margin-left: 2px;
-          border-radius:10px;
-          width:40%;
-          }
 
-          .submit
-          {
-          background-color:green;
-          border:none;
-          color:wheat;
-          text-decoration:none;
-          padding:16px 32px;
-          margin:25px;
-          margin-left: 300px;
-          border-radius:10px;
-          }
+        .button{
+                background-color: rgb(16, 194, 75);
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+                font-size: 25px;
+              }
 
+        button:hover{
 
-      input[type=button]:hover, input[type=submit]:hover{
-        color:blue;
-        background-color:grey;
-      }
+              background-color:grey;
+              }
+
+        .outer{
+
+            color: white;
+            background-color: rgb(85, 88, 86);
+            text-align:center;
+            padding:0.5px;
+            font-size:1.9rem;
+            }
+        a:hover
+            {
+            color:blue;
+            background-color:grey;
+            }
       table {
           font-family:arial, sans-serif;
           border-collapse: collapse;
@@ -124,7 +129,7 @@
           </tr>
           </tr>
         </thead>
-        @foreach($take as $index=>$post)
+        @foreach($data as $index=>$post)
         <tbody>
           <tr>
 

@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class PostController extends Controller
 {
@@ -109,6 +110,8 @@ class PostController extends Controller
     public function roleindex()
     {
         $role=Auth::user()->role;
+
+        Log::debug($role);
         if($role=='1')
         {
             return view('role.admin');
@@ -116,11 +119,18 @@ class PostController extends Controller
 
         elseif ($role== '2')
         {
-            return view('role.hod');
+            $data = Post::all();
+            return view('role.hod',compact('data'));
+        }
+        elseif ($role== '0')
+        {
+            $data = Post::all();
+            return view('role.faculty',compact('data'));
         }
 
       else
         {
+
             return view('dashboard');
         }
 
@@ -135,6 +145,10 @@ class PostController extends Controller
 
         $data->save();
         return redirect()->back();
+    }
+    public function addfac()
+    {
+   return view('role.addfaculty');
     }
 
 }

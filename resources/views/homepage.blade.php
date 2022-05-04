@@ -23,8 +23,8 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-        <h2 class="FM">FACULTY MANAGEMENT</a></h2>
-      <h1 class="logo me-auto">NIT MIZORAM</a></h1>
+        <h2 class="FM">FACULTY MANAGEMENT, NIT MIZORAM</a></h2><br>
+      <h1 class="logo me-auto"></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
        <!--<a href="index.html" class="logo me-auto"><img src="img/nitmz.png" alt="" class="img-fluid"></a>-->
 
@@ -35,14 +35,7 @@
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
 
-          <li class="dropdown"><a href="#"><span>TEST </span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="test">ADMIN LOGIN</a></li>
-              <li><a href="#">FACULTY LOGIN</a></li>
-              <li><a href="#">HOD LOGIN</a></li>
-              <li><a href="loginpage">LOGIN</a></li>
-            </ul>
-          </li>
+
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

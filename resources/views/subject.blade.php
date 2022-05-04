@@ -1,14 +1,20 @@
 
-<br><br><button type="button" class="btn btn-info" style="position:absolute; right:100px;margin:0"><a href="/test">
+
+<br><br><button class="button" style="position:absolute; right:100px;margin:0"><a href="/test">
     Add Class</a></button><br><br>
 
-<section id="services" class="services">
-    <div class="container">
+    <section id="services" class="services">
+        <div class="container">
 
-      <div class="section-title">
-        <h2>FACULTY RECORDS</h2>
+            <div class="outer">
+                <p class="inner"><center>Faculty Class Detail</center></p>
+              </div>
 
-      </div>
+
+
+
+          </div>
+          <br>
     </section>
 
     <style>
@@ -17,18 +23,32 @@
           color:black;
 
         }
-          .button
-          {
-          background-color:red;
-          border:none;
-          color:wheat;
-          text-decoration:none;
-          padding:16px 32px;
-          margin:25px;
-          margin-left: 2px;
-          border-radius:10px;
-          width:40%;
-          }
+        .outer {
+
+            color: white;
+            background-color: rgb(85, 88, 86);
+            text-align:center;
+            font-size:1.5rem;
+
+            padding:1px;
+            border-collapse:collapse;
+            border-width:thin;
+            border: 2px outset rgb(209, 27, 30);
+            }
+            .button{
+                background-color: rgb(85, 88, 86);
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+              }
+
+        button:hover{
+
+              background-color:grey;
+              }
 
           .submit
           {
@@ -101,12 +121,7 @@
       </head>
       <body>
 
-          <form action="{{ url('/search') }}" method="get">
-            @csrf
-              <input type="search" class="sr" name="search" placeholder="Search Faculty Name.">
-              <button type="submit" id="search">Search</button>
-              </form>
-              <h2>Note:</h2><h4>Search Faculty Name.</h4>
+
 
 
 
