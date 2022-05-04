@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\user;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -26,26 +28,113 @@ class PostController extends Controller
     }
 
 
-//<-------FETCH DATA FROM DB TABLE------->
-    Public function show()
-
-       {
-           $data=Post::all();
-           $tata = "999";
+    //<-------FETCH DATA FROM DB TABLE------->
+    public function show()
+    {
+        $data=Post::all();
+        $tata = "999";
         //    return view('subject',['nice'=>$data]);
-        return view('subject',compact('data','tata'));
-       }
-//<-------END FETCH DATA FROM DB TABLE------->
+        return view('subject', compact('data', 'tata'));
+    }
+    //<-------END FETCH DATA FROM DB TABLE------->
 
 
-//<-------DELETE DATA FROM DB TABLE------->
-Public function list()
+    //<-------DELETE DATA FROM DB TABLE------->
+    public function list()
+    {
+         $data=Post::all();
+         $tata = "999";
+            return view('subject',['nice'=>$data]);
+        return view('list', compact('data', 'tata'));
+    }
+    //<-------END Delete DATA FROM DB TABLE------->
 
-{
+
+    Public function edit()
+    {
+    //
     $data=Post::all();
-    $tata = "999";
- //    return view('subject',['nice'=>$data]);
- return view('list',compact('data','tata'));
-}
-//<-------END Delete DATA FROM DB TABLE------->
+    return view('admin.edit',compact('data'));
+    }
+
+/**
+ * Update the specified resource in storage.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @param  \App\Student  $student
+ * @return \Illuminate\Http\Response
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+// public function update(Request $request,$id)
+// {
+//     //
+
+//     $request->validate([
+//         'txtFirstName'=>'required',
+//         'txtLastName'=> 'required',
+//         'txtAddress' => 'required'
+//     ]);
+
+
+//     $student = Student::find($id);
+//     $student->first_name = $request->get('txtFirstName');
+//     $student->last_name = $request->get('txtLastName');
+//     $student->address = $request->get('txtAddress');
+
+//     $student->update();
+
+//     return redirect('/student')->with('success', 'Student updated successfully');
+// }
+
+// /**
+//  * Remove the specified resource from storage.
+//  *
+//  * @param  \App\Student  $student
+//  * @return \Illuminate\Http\Response
+//  */
+// Public function destroy(Student $student)
+// {
+//     //
+//     $student->delete();
+//     return redirect('/student')->with('success', 'Student deleted successfully');
+//
+
+    public function roleindex()
+    {
+        $role=Auth::user()->role;
+        if($role=='1')
+        {
+            return view('role.admin');
+        }
+
+        elseif ($role== '2')
+        {
+            return view('role.hod');
+        }
+
+      else
+        {
+            return view('dashboard');
+        }
+
+    }
+    public function addfaculty(Request $request)
+    {
+        $data=new user;
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->password=bcrypt($request->password);
+        $data->role='0';
+
+        $data->save();
+        return redirect()->back();
+    }
+
 }

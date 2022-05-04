@@ -42,10 +42,10 @@ class FacultyController extends Controller
 Public function adminView()
 
 {
-    $take=Post::all();
-    $safe = "999";
+    $data=Post::all();
+    $tata = "999";
  //    return view('subject',['nice'=>$data]);
- return view('faculty/adminview',compact('take','safe'));
+ return view('faculty/adminview',compact('data','tata'));
 }
 //<-------END FETCH DATA FROM DB TABLE------->
 
@@ -53,10 +53,10 @@ Public function adminView()
 Public function hodView()
 
 {
-    $take=Post::all();
-    $safe = "999";
+    $data=Post::all();
+    $tata = "999";
  //    return view('subject',['nice'=>$data]);
- return view('faculty/hodview',compact('take','safe'));
+ return view('faculty/hodview',compact('data','tata'));
 }
 //<-------END FETCH DATA FROM DB TABLE------->
 

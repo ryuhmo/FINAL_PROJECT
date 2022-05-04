@@ -14,7 +14,7 @@
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
               <div class="icon-box">
                 <div class="icon"><i class="fas fa-heartbeat"></i></div>
-                <h4><a href="/subjects">Admin Login</a></h4>
+                <h4><a href="/login">Admin Login</a></h4>
                 <p>test, this is admin login</p>
               </div>
             </div>
@@ -30,7 +30,7 @@
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
               <div class="icon-box">
                 <div class="icon"><i class="fas fa-hospital-user"></i></div>
-                <h4><a href="/subjects">HOD Login</a></h4>
+                <h4><a href="/login">HOD Login</a></h4>
                 <p>testing, this is hod page</p>
               </div>
             </div>

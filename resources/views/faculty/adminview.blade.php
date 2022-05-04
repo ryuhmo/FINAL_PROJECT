@@ -71,7 +71,7 @@
 
         }
 
-        a:link, a:visited
+        /* a:link, a:visited
         {
           text-decoration:none;
           background-color:purple;
@@ -82,7 +82,7 @@
           border-radius:10px;
           width:50%;
 
-        }
+        } */
         a:hover
         {
          color:blue;
@@ -150,10 +150,10 @@
                  </td>
             <td>
                 {{  date('d-M-Y', strtotime($post['updated_at'])) }}
-
+                <a href={{ "edit/".$post['id'] }} class="btn btn-primary btn-sm">Edit</a>
+          <a href={{ "edit/".$post['id'] }} class="btn btn-primary btn-sm">Delete</a>
             </td>
-            <a href={{ "edit/".$post['id'] }} class="btn btn-primary btn-sm">Edit</a>
-            <a href={{ "edit/".$post['id'] }} class="btn btn-primary btn-sm">Delete</a>
+
           </tr>
           <tr>
         </tbody>
