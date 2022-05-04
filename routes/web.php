@@ -65,9 +65,10 @@ Route::get('/post/{id}/{name}', function ($id, $name) {
 
    route::get('/redirects',[PostController::class,"roleindex"]);
    route::post('/addfaculty',[PostController::class,"addfaculty"]);
+   route::get('/addfaculty',[PostController::class,"addfac"]);
 
-   Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[
-       PostController::class,"addfaculty"])->name('dashboard');
+    Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[
+        PostController::class,"addfaculty"])->name('dashboard');
 
    Route::get('/submitsucess', function () {
     return view('submitsucess');
